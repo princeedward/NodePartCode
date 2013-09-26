@@ -1,0 +1,28 @@
+// Jade file to specify output of an actors list
+// Inherits from layout
+extend layout
+block content
+  p
+    | #{title}:
+  // Create a table with one row per result
+  table(id = 'moviesTable')
+    tr
+      td(class = 'MovieNameStyle') Movie Name
+      //- td &nbsp;
+      td(class = 'RankStyle') Movie Rank
+      //- td &nbsp;
+      td(colspan = 2) Actors Name
+      //- td &nbsp;
+      //- td(class = 'NameStyle')
+    - for (var inx = 0; inx < results.length; inx++)
+        tr
+          td(class = 'MovieNameStyle')=results[inx].NAME
+          //- td &nbsp;
+          td(class = 'RankStyle')=Math.round(results[inx].RANK * 10) / 10
+          //- td &nbsp;
+          td(class = 'NameStyle')=results[inx].FIRST_NAME
+          //- td &nbsp;
+          td(class = 'NameStyle')=results[inx].LAST_NAME
+  // Put a click button that lets us return to the index page 
+  form(method='get', action='/')
+      input(type='submit', value='Return')
