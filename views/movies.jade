@@ -10,6 +10,8 @@ block content
       td(class = 'MovieNameStyle') Movie Name
       //- td &nbsp;
       td(class = 'RankStyle') Movie Rank
+      //- td &nbsp; 
+      td(class = 'Year') Year
       //- td &nbsp;
       td(colspan = 2) Actors Name
       //- td &nbsp;
@@ -19,6 +21,8 @@ block content
           td(class = 'MovieNameStyle')=results[inx].NAME
           //- td &nbsp;
           td(class = 'RankStyle')=Math.round(results[inx].RANK * 10) / 10
+          //- td &nbsp;
+          td(class = 'Year')=results[inx].YEAR
           //- td &nbsp;
           td(class = 'NameStyle')=results[inx].FIRST_NAME
           //- td &nbsp;

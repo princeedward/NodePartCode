@@ -17,7 +17,7 @@ function query_db(res,name) {
     	console.log(err);
     } else {
 	  	// selecting rows
-	  	connection.execute(	"SELECT m.name, m.rank, a.first_name, a.last_name " + 
+	  	connection.execute(	"SELECT m.name, m.rank, m.year, a.first_name, a.last_name " + 
 	  						"FROM actors a, movies m, roles r " + 
 	  						"WHERE a.id = r.actor_id AND m.id = r.movie_id AND a.last_name='" + name + 
 	  						"' AND rownum <= 10", 
